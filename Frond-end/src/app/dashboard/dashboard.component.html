@@ -1,0 +1,139 @@
+<div class="mainContainer">
+    <div class="headerContainer">
+        <div class="innerHeader">
+            <div class="headerLeft">
+                <div class="iconContainer flex-1 d-flex jcc">
+                    <div class="iconInner">
+                        <img class="img-align" width="65px" src="../../assets/2a3c8831554396c7a70357ea9d137b8c-emergency-call-doctor-textured-by-vexels.png"/>
+                    </div>
+                </div>
+    
+                <div class="doctorDetails flex-2 d-flex jcc">
+                    <div class="doctorDetailsInner">
+                        <p class="dFont">Dr. Nishant Clinician</p>
+                        <p class="dFont p-0 subText">Kids Care Clinic</p>
+                        <div class="arrow-down"></div>
+                        <div class="doctorImage">
+                            <img width="30px" src="../../assets/doctor_PNG15988.png"/>
+                        </div>
+                        <div class="rightBorder"></div>
+                    </div>
+                </div>
+                <div class="curretnDate flex-2 d-flex jcc">
+                    <div class="currentDateInner">
+                        <p class="dFont">Today</p>
+                        <p class="dFont p-0 subText specialClr">{{currentDate | date : 'mediumDate'}}</p>
+                        <div class="arrow-down"></div>
+                        <div class="dateIcon">
+                            <img width="25px" src="../../assets/549-5494724_time-and-date-png-png-download-date-icon.png"/>
+                        </div>
+                        <div class="rightBorder"></div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="headerRight">
+                <div class="bookAppointment flex-1 d-flex jcc aic">
+                    <div>
+                        <button routerLink="/appointment" class="appointmentBtn specialClr">Appointments</button>
+                    </div>
+                </div>
+    
+                <div class="settings flex-1 d-flex jcc aic">
+                    <div><img width="25px" src="../../assets/2578888.png"/></div>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+    <div class="bodyContainer">
+        <div class="innerContainer">
+            <div class="titleContainer">
+                <p class="f-600">Home</p>
+            </div>
+            <div class="homeContainer">
+                <div class="homeInner">
+                   <div class="appointmentListContainer">
+
+                    <div class="appointmentListInner">
+                        <div *ngFor="let x of appointmentList; let i = index;" class="appointmentList">
+                            <div class="listStyle apointmentAlign">
+                                <div class="first-dot"><span class="dot"></span>&nbsp;<span class="dot"></span></div>
+                                <div><span class="dot"></span>&nbsp;<span class="dot"></span></div>
+                                <div class="last-dot"><span class="dot"></span>&nbsp;<span class="dot"></span></div>
+                            </div>
+                            <div class="serialNum apointmentAlign" [ngStyle]=" {'top' : i != 0 ? '0' : ''}"> <div>{{i+1}}</div> </div>
+                            <div class="patientDet apointmentAlign">
+                                <div class="patientName" [ngStyle]=" {'top' : i != 0 ? '0' : ''}">
+                                    {{x.name}}
+                                </div>
+                                <div class="ageGender" [ngStyle]=" {'top' : i != 0 ? '0' : ''}">
+                                    {{x.gender}}, {{x.age}} yrs
+                                </div>
+                                <div class="patientImg" [ngStyle]=" {'top' : i != 0 ? '0' : ''}">   
+                                    <img width="40px" src="../../assets/Men-Profile-Image-715x657.png"/>                                 
+                                </div>
+                                <div *ngIf="i == 0" class="patientHeader listHeaders headFontStyle">
+                                    PATIENT
+                                </div>
+                            </div>
+                            <div class="contactDet apointmentAlign">
+                                <div class="mobileNum" [ngStyle]=" {'top' : i != 0 ? '0' : ''}">{{x.phone}}</div>
+                                <div *ngIf="i == 0" class="contactHeader listHeaders1 headFontStyle">
+                                    CONTACT
+                                </div>
+                            </div>
+
+                            <div class="appointmentDet apointmentAlign">
+                                <div class="apoointmentSlot" [ngStyle]=" {'top' : i != 0 ? '0' : ''}">{{x.slot_time}}</div>
+                                <div *ngIf="i == 0" class="appointmentHeader listHeaders1 headFontStyle">
+                                    APPOINTMENT
+                                </div>
+                            </div>
+
+                            <div class="spendTimeDet apointmentAlign">
+                                <div class="spendTime" [ngStyle]=" {'top' : i != 0 ? '0' : ''}">{{x.waited}}</div>
+                                <div *ngIf="i == 0" class="spendTimeHeader listHeaders1 headFontStyle">
+                                    WAITED
+                                </div>
+                            </div>
+                            <div class="listStyle1 apointmentAlign dotStyle">
+                                <div class="first-dot"><span class="dot"></span>&nbsp;<span class="dot"></span>&nbsp;<span class="dot"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                   </div>
+                </div>                
+            </div>
+            <div class="tabsContainer">
+                <div class="tabs">
+                    <div class="tabsInner">
+                        <p class="specialClr f-600">{{'0'+appointmentList?.length }}</p>
+                        <p class="m-0 spl-align specialClr">Queue</p>
+                        <div class="leftBorder"></div>
+                    </div>
+                </div>
+                <div class="tabs specialBg m-left-10">
+                    <div class="tabsInner">
+                        <p class="clr-white f-600">0</p>
+                        <p class="clr-white m-0 spl-align">Earlier</p>
+                    </div>
+                </div>
+                <div class="tabs specialBg m-left-10">
+                    <div class="tabsInner">
+                        <p class="clr-white f-600">0</p>
+                        <p class="clr-white m-0 spl-align">Wait List</p>
+                    </div>
+                </div>
+                <div class="tabs specialBg m-left-10">
+                    <div class="tabsInner">
+                        <p class="clr-white f-600">0</p>
+                        <p class="clr-white m-0 spl-align">No Show</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

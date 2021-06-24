@@ -1,0 +1,119 @@
+
+<div class="appointmentsBody">
+    <div class="pagePadding">
+
+        <div class="routeDet dis-flex">
+            <div class="appointmentRoute">
+                <p class="title-font-style">Appointments</p>
+                <div class="sideBorder"></div>
+            </div>
+            <div class="innerRoutes dis-flex">
+                <p class="m-left-40">Home</p>
+                <div class="arrowMark m-left-30">></div>
+                <p class="m-left-30">Appointments</p>
+            </div>
+        </div>
+
+        <div class="appointmentContent dis-flex">
+
+            <mat-card class="demo-inline-calendar-card h-80">
+                <mat-calendar #calender (selectedChange)="getSelected($event)" [selected]="selectedDate"></mat-calendar>
+            </mat-card> 
+
+            <div class="appointmentSlotContainer">
+                <div class="morningSlot">
+                    <div class="morningSlotHeader">
+                        <div class="slotInnerLeft">
+                            <p class="f-w-600">Morning</p>
+                            <p class="timeAlign">{{morningSlotValFrom}} to {{morningSlotValTo}}</p>     
+                            <div class="morningIcon">
+                                <img width="46px" src="../../assets/sunrise-morning-pngrepo-com.png"/>   
+                            </div>
+                        </div>
+                        <div class="slotInnerRight">
+                            <button (click)="addSlots('morning')" class="addSlotBtn"><span>+</span>&nbsp;<span>Add Slots</span></button>
+                        </div>
+                                           
+                    </div>
+                    <div class="morningSlotBody">
+                        <div class="slotBodyInner">
+                            <div class="slotBodyContainer">
+                                <div class="slotList">
+                                    <button style="cursor: pointer;"  *ngFor="let item of morningSlotListItems; let i = index;" [ngStyle]=" {'background' : item.exist ? 'rgb(8 199 182)' : '', 'border' : item.exist ? 'none' : ''}" (click)="bookSlot(item)" type="button" class="slots slotsMargin m-r-10"><span [ngStyle]=" {'border' : item.exist ? '1px solid white' : ''}" class="btnCircle"></span> <span [ngStyle]=" {'color' : item.exist ? 'white' : ''}">{{item.value}}</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="morningSlot">
+                    <div class="morningSlotHeader">
+                        <div class="slotInnerLeft">
+                            <p class="f-w-600">Evening</p>
+                            <p class="timeAlign">{{eveningSlotValFrom}} to {{eveningSlotValTo}}</p>     
+                            <div class="morningIcon">
+                                <img width="46px" src="../../assets/5942533.png"/>   
+                            </div> 
+                        </div>
+                        <div class="slotInnerRight">
+                            <button (click)="addSlots('evening')" class="addSlotBtn"><span>+</span>&nbsp;<span>Add Slots</span></button>
+                        </div>                        
+                    </div>
+                    <div class="divider"></div>
+                    <div class="morningSlotBody">
+                        <div class="slotBodyInner">
+                            <div class="slotBodyContainer">
+                                <div class="slotList">
+                                    <button style="cursor: pointer;" *ngFor="let item of eveningSlotListItems; let i = index;" [ngStyle]=" {'background' : item.exist ? 'rgb(8 199 182)' : '', 'border' : item.exist ? 'none' : ''}" (click)="bookSlot(item)" type="button" class="slots slotsMargin m-r-10"><span [ngStyle]=" {'border' : item.exist ? '1px solid white' : ''}" class="btnCircle"></span> <span [ngStyle]=" {'color' : item.exist ? 'white' : ''}">{{item.value}}</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div [className]="trigger">
+        <div class="popupAlign">              
+            <div class="backgroundBlur"></div>       
+            <div class="popupContent">              
+                <div class="slotForm"> 
+                    <div><h2>Add Slot</h2></div>     
+                    <div [hidden]="!showError">
+                        <p style="color: red;">{{errorMsg}}</p>
+                    </div>                
+                    <div class="slotFormInner">                        
+                        <form #slotForm>
+                            <div class="form-group">
+                                <label class="f-w-600" for="name">From Time : </label>
+                                <div class="ngx-timepicker-field-example p-10">
+                                    <ngx-timepicker-field  [defaultTime]="formattedTime" #slotFromTime (timeChanged)="fromT($event)"></ngx-timepicker-field>
+                                </div>
+                              </div>
+                              
+                              <div class="form-group">
+                                <label class="f-w-600" for="alterEgo">To Time : </label>
+                                <div class="ngx-timepicker-field-example p-10">
+                                    <ngx-timepicker-field [defaultTime]="formattedTime" #slotToTime (timeChanged)="toT($event)"></ngx-timepicker-field>
+                                </div>
+                              </div>
+                              <div class="formBtns m-top-12">
+                                <!-- <ng-template #cancelBtn> -->
+                                    <button type="button" (click)="closePopup()" class="closeBtns m-left-30 d-btn-style">Close</button>
+                                <!-- </ng-template> -->
+                                <button type="button" (click)="saveSlot()" class="saveBtn m-left-30 d-btn-style">Save</button>
+                            </div>
+                        </form>                                             
+                    </div>                     
+                </div>
+                 
+                <div class="closeBtn">
+                    <button (click)="closePopup()" class="crossIcon">X</button>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>

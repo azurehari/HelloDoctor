@@ -1,0 +1,191 @@
+.pagePadding{
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.dis-flex{
+    display: flex;
+}
+.m-left-30{
+    margin-left: 30px;
+}
+.m-left-40{
+    margin-left: 40px;
+}
+.title-font-style{
+    font-size: 20px;
+    font-weight: 600;
+}
+.innerRoutes{
+    align-items: center;
+}
+.sideBorder{
+    height: 24px;
+    border-right: 1px solid #b1abab;
+    position: relative;
+    bottom: 43px;  
+    left: 18px;
+}
+.appointmentRoute{
+    position: relative;
+    top: 10px;
+}
+
+.demo-inline-calendar-card {
+    width: 300px;
+}
+.appointmentSlotContainer{
+    margin-left: 18px;
+    background: white;    
+    width: 800px;
+    border-radius: 4px;
+}
+.morningSlot{
+    margin-left: 68px;
+}
+.f-w-600{
+    font-weight: 600;
+}
+.timeAlign{
+    font-size: 12px;
+    position: relative;
+    top: -14px;
+}
+.morningIcon{
+    position: relative;
+    top: -70px;
+    left: -58px;
+}
+.morningSlotHeader{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.addSlotBtn{
+    position: relative;
+    right: 14px;
+    top: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #0189fd;
+    font-size: 14px;
+}
+.divider{
+    width: 100%;
+    border-top: 1px solid #e6e3e3;   
+    position: relative;    
+    right: 30px;
+    top: -55px;
+}
+.addSlotsPopUp{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: none;
+}
+.popupAlign{
+    height: 100%;
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.backgroundBlur{
+    height: 100%;
+    width: 100%;
+    background: black;
+    z-index: 1;
+    opacity: 0.3;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.popupContent{
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    background: white;
+    z-index: 1;
+    border-radius: 8px;    
+}
+.closeBtn{
+    position: relative;
+    left: 95px;
+    top: -125px;
+}
+.crossIcon{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.d-none{
+    display: none;
+}
+.d-block{
+    display: block;
+}
+.p-10{
+    padding: 10px;
+}
+.f-w-600{
+    font-weight: 600;
+}
+.m-top-12{
+    margin-top: 12px;
+}
+.m-left-30{
+    margin-left: 30px;
+}
+.d-btn-style{
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: none;
+    background: #6da7e2;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.formBtns{
+    position: relative;
+    left: 70px;
+}
+.btnCircle {
+    height: 14px;
+    width: 14px;
+    background: none;
+    border: 1px solid grey;
+    border-radius: 50%;
+    display: inline-block;
+}
+.slots{
+    padding: 10px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+    background: none;
+    border: 1px solid #c5c3c3;
+}
+.m-r-10{
+    margin-right: 10px;
+}
+.slotList{
+    display: flex;    
+    flex-wrap: wrap;
+    margin: 10px;
+}
+.slotsMargin{
+    margin: 10px;
+}
+.h-80{
+    height: 80%;
+}
